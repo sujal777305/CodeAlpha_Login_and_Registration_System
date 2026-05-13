@@ -27,7 +27,7 @@ int main() {
                 cin.ignore(numeric_limits<streamsize>::max(), '\n');
 
                 cout<<"Enter password : ";
-                getline(cin, password);
+                geline(cin, password);
 
                 registration(username, password);
                 break;
