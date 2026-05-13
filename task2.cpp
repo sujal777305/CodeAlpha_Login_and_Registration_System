@@ -1,6 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include <limits>
+#include <conio.h>
 using namespace std;
 
 void registration(string username, string password) {
@@ -34,13 +35,26 @@ void registration(string username, string password) {
     }
 }
 
-// void login() {
+void login(string username, string password) {
+    string uname;
+    string pass;
 
-// }
+    string file = username + ".txt";
+    ifstream fin(file);
+    getline(fin, uname);
+    getline(fin, pass);
+
+    if(uname==username && pass==password) {
+        cout<<"\n\nLogin successful..!!!\n";
+    } else {
+        cout<<"\n\nInvalid username or password\n";
+    }
+}
 
 int main() {
     cout<<"Welcome message\n\n";
     string username, password;
+    char c;
     int ch;
     do {
         cout<<"\nSelect operation\n1. Registration\n2. Login\n0. Exit\n";
@@ -60,10 +74,28 @@ int main() {
                 registration(username, password);
                 break;
             case 2:
-                // login();
+                cout<<"Enter username : ";
+                cin>>username;
+            
+                cin.ignore(numeric_limits<streamsize>::max(), '\n');
+
+                cout<<"Enter password : ";
+                password="";
+                while((c=_getch()) != 13) {
+                    if(c == 8) {
+                        if(password.length() > 0) {
+                            password.pop_back();
+                            cout << "\b \b";
+                        }
+                    } else {
+                        password += c;
+                        cout << "*";
+                    }
+                }
+                login(username, password);
                 break;
             case 0:
-                cout<<"Exit\n";
+                cout<<"\nExiting the program..!!!\n";
                 break;
             default:
                 cout<<"Please select valid choice\n";
