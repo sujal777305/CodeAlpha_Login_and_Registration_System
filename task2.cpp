@@ -13,9 +13,9 @@ void registration(string username, string password) {
         if(uname==username) {
             found=true;
             break;
-            obj.close();
         }
     }
+    obj.close();
     if(found) {
         cout<<"This username is already exist...\n";
     } else {
@@ -92,6 +92,7 @@ int main() {
                         cout << "*";
                     }
                 }
+                cout<<endl;
                 login(username, password);
                 break;
             case 0:
@@ -101,6 +102,7 @@ int main() {
                 cout<<"Please select valid choice\n";
         }
     }while(ch!=0);
-    
+
+    cout<<"\n Developed by SUJAL\n\n";
     return 0;
 }
