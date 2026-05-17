@@ -52,7 +52,7 @@ void login(string username, string password) {
 }
 
 int main() {
-    cout<<"\n||| Welcome to Login and Registration System |||\n\n";
+    cout<<"\n||| WELCOME TO LOGIN & REGISTRATION SYSTEM |||\n\n";
     string username, password;
     char c;
     int ch;
