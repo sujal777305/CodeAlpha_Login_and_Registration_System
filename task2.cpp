@@ -52,12 +52,12 @@ void login(string username, string password) {
 }
 
 int main() {
-    cout<<"Welcome message\n\n";
+    cout<<"\n||| Welcome to Login and Registration System |||\n\n";
     string username, password;
     char c;
     int ch;
     do {
-        cout<<"\nSelect operation\n1. Registration\n2. Login\n0. Exit\n";
+        cout<<"Select operation\n1. Registration\n2. Login\n0. Exit\n";
         cout<<"Enter your choice : ";
         cin>>ch;
 
